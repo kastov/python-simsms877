@@ -3,10 +3,10 @@ from os import path
 from setuptools import setup
 
 """
-@author: tezmen
+@author: tezmen, forked and edited by ravensoracle
 @contact: https://t.me/tezmen
 @license Apache License, Version 2.0, see LICENSE file
-Copyright (C) 2018
+Copyright (C) 2019
 """
 
 
@@ -31,14 +31,14 @@ setup(
 	version='1.2.5',
 	long_description=long_description(),
 	long_description_content_type='text/markdown',
-	description='Wrapper for automatic reception of SMS-messages by sms-activate.ru',
+	description='Wrapper for automatic reception of SMS-messages by smshub.org',
 	author='tezmen',
 	license='Apache License, Version 2.0, see LICENSE file',
-	keywords='sms, revice, sms-activate-ru, autoreg',
+	keywords='sms, revice, smshub.org, autoreg',
 	author_email='tezmenpro@gmail.com',
-	url='https://github.com/tezmen/python-sms-activate-ru',
-	download_url='https://github.com/tezmen/python-sms-activate-ru/archive/master.zip',
-	packages=['smsactivateru'],
+	url='https://github.com/ravensoracle/python-smshub-org/',
+	download_url='https://github.com/ravensoracle/python-smshub-org/archive/master.zip',
+	packages=['smshuborg'],
 	install_requires=requirements(),
 	classifiers=[
 		'License :: OSI Approved :: Apache Software License',
