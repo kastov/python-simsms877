@@ -25,14 +25,14 @@ class SmsActivation:
 			return set_status.request(self.wrapper)
 		return set_status
 
-	def mark_as_used(self):
-		set_status = smshuborg.SetStatus(
-			id=self.__id,
-			status=smshuborg.SmsTypes.Status.AlreadyUsed
-		)
-		if self.wrapper:
-			return set_status.request(self.wrapper)
-		return set_status
+	# def mark_as_used(self):
+	# 	set_status = smshuborg.SetStatus(
+	# 		id=self.__id,
+	# 		status=smshuborg.SmsTypes.Status.AlreadyUsed
+	# 	)
+	# 	if self.wrapper:
+	# 		return set_status.request(self.wrapper)
+	# 	return set_status
 
 	def was_sent(self):
 		set_status = smshuborg.SetStatus(

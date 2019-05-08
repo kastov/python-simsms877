@@ -10,7 +10,7 @@ class ErrorStorage:
 			'class': 'NoFreeNumber'
 		},
 		'NO_BALANCE':    {
-			'text':  'Закончился баланс',
+			'text':  'Недостаточно средств на балансе',
 			'class': 'NoBalance'
 		},
 		'BAD_ACTION':    {
@@ -46,7 +46,7 @@ class ErrorStorage:
 			'class': 'BannedUser'
 		},
 		'NO_CONNECTION': {
-			'text':  'Нет соединения с серверами sms-activate',
+			'text':  'Нет соединения с серверами текущего сервиса',
 			'class': 'ConnectionError'
 		}
 	}

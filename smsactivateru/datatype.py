@@ -81,7 +81,7 @@ class SmsTypes:
 		SmsSent = '1'
 		OneMoreCode = '3'
 		End = '6'
-		AlreadyUsed = '8'
+		# AlreadyUsed = '8'
 
 	class Operator:
 		MTS = 'mts'
@@ -98,4 +98,8 @@ class SmsTypes:
 		Yota = 'yota'
 		Kievstar = 'kyivstar'
 		Life = 'life'
+		Utel = 'utel'
+		Vodafone = 'vodafone'
+		Altel = 'altel'
+		ChinaUnicom = 'unicom'
 		Any = 'any'
