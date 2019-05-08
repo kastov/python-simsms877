@@ -58,7 +58,7 @@ $ python setup.py install
 ```
 ...либо установка через pip но из репозитория, минуя сервера pypi
 ```
-$ pip install git+https://github.com/tezmen/ravensoracle/python-smshub-org
+$ pip install git+https://github.com/ravensoracle/python-smshub-org
 ```
 ### Простой пример
 ```python
