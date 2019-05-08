@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 
-import smsactivateru
+import smshuborg
 
 
 class SmsActivation:
@@ -17,27 +17,27 @@ class SmsActivation:
 		self.__last_code = str()
 
 	def cancel(self):
-		set_status = smsactivateru.SetStatus(
+		set_status = smshuborg.SetStatus(
 			id=self.__id,
-			status=smsactivateru.SmsTypes.Status.Cancel
+			status=smshuborg.SmsTypes.Status.Cancel
 		)
 		if self.wrapper:
 			return set_status.request(self.wrapper)
 		return set_status
 
 	def mark_as_used(self):
-		set_status = smsactivateru.SetStatus(
+		set_status = smshuborg.SetStatus(
 			id=self.__id,
-			status=smsactivateru.SmsTypes.Status.AlreadyUsed
+			status=smshuborg.SmsTypes.Status.AlreadyUsed
 		)
 		if self.wrapper:
 			return set_status.request(self.wrapper)
 		return set_status
 
 	def was_sent(self):
-		set_status = smsactivateru.SetStatus(
+		set_status = smshuborg.SetStatus(
 			id=self.__id,
-			status=smsactivateru.SmsTypes.Status.SmsSent
+			status=smshuborg.SmsTypes.Status.SmsSent
 		)
 		if self.wrapper:
 			return set_status.request(self.wrapper)
@@ -57,19 +57,19 @@ class SmsActivation:
 			counter += 1
 			if counter >= timeout:
 				raise ('Timeout error')
-			response = smsactivateru.GetStatus(id=self.id).request(self.wrapper)
+			response = smshuborg.GetStatus(id=self.id).request(self.wrapper)
 			if response['code'] and not not_end and response['code'] != self.last_code:
 				self.__last_code = response['code']
-				smsactivateru.SetStatus(
+				smshuborg.SetStatus(
 					id=self.id,
-					status=smsactivateru.SmsTypes.Status.End
+					status=smshuborg.SmsTypes.Status.End
 				).request(self.wrapper)
 				break
 			elif response['code'] and not_end and response['code'] != self.last_code:
 				self.__last_code = response['code']
-				smsactivateru.SetStatus(
+				smshuborg.SetStatus(
 					id=self.id,
-					status=smsactivateru.SmsTypes.Status.OneMoreCode
+					status=smshuborg.SmsTypes.Status.OneMoreCode
 				)
 				break
 		if callback:

@@ -43,7 +43,7 @@ class GetFreeSlots(ActionsModel):
 
 	def request(self, wrapper):
 		"""
-		:rtype: smsactivateru.services.SmsService
+		:rtype: smshuborg.services.SmsService
 		"""
 		response = wrapper.request(self)
 		return self.__response_processing(response)
@@ -64,7 +64,7 @@ class GetNumber(ActionsModel):
 
 	def request(self, wrapper):
 		"""
-		:rtype: smsactivateru.activations.SmsActivation
+		:rtype: smshuborg.activations.SmsActivation
 		"""
 		response = wrapper.request(self)
 		return self.__response_processing(response, wrapper=wrapper)
