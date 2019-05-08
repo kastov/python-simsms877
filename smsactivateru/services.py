@@ -34,7 +34,7 @@ class SmsService:
 			setattr(self, '_' + name, object)
 
 	@property
-	def VkCom(self):
+	def Vkontakte(self):
 		"""
 		:rtype: smshuborg.models.ServiceModel
 		"""
