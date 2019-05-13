@@ -29,8 +29,10 @@ class SmsService:
 			object = object_factory(
 				name,
 				base_class=ServiceModel,
-				argnames=['__service_short_name', '__count_slot']
-			)(__service_short_name=short_name, __count_slot=0)
+				argnames=['__service_short_name', '__count_slot', '__service_price_map', '__service_prices',
+				          '__service_quantities', '__service_min_price', '__service_max_price', '__service_is_work']
+			)(__service_short_name=short_name, __count_slot=0, __service_price_map=None, __service_prices=None,
+			  service_quantities=None, __service_min_price=0, __service_max_price=0, __service_is_work=False)
 			setattr(self, '_' + name, object)
 
 	@property
@@ -146,11 +148,11 @@ class SmsService:
 		return self._GettTaxi
 
 	@property
-	def Olx(self):
+	def OlX(self):
 		"""
 		:rtype: smshuborg.models.ServiceModel
 		"""
-		return self._Olx
+		return self._OlX
 
 	@property
 	def Instagram(self):

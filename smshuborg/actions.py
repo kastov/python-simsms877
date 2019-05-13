@@ -49,6 +49,46 @@ class GetFreeSlots(ActionsModel):
 		return self.__response_processing(response)
 
 
+class GetFreeSlotsAndPrices(ActionsModel):
+	_name = 'getNumbersStatusAndCostHubFree'
+
+	def __init__(self, country=None, operator=None):
+		super().__init__(inspect.currentframe())
+
+	@error_handler
+	def __response_processing(self, response):
+		service_list = json.loads(response)
+
+		service_obj = SmsService()
+		for name, short_name in ServiceStorage.names.items():
+			short_name = short_name[:-2]
+			prices_dict = service_list[short_name]['priceMap']
+			getattr(service_obj, name).priceMap = prices_dict
+
+			quantities = list(map(int, list(prices_dict.values())))
+			getattr(service_obj, name).quantities = quantities
+
+			prices = list(map(float, list(prices_dict.keys())))
+			getattr(service_obj, name).prices = prices
+			if len(prices) != 0:
+				getattr(service_obj, name).minPrice = (prices[0], quantities[0])
+				getattr(service_obj, name).maxPrice = (prices[-1], quantities[-1])
+			else:
+				getattr(service_obj, name).minPrice = 0
+				getattr(service_obj, name).maxPrice = 0
+
+			getattr(service_obj, name).count = int(service_list[short_name]['totalQuantity'])
+			getattr(service_obj, name).work = int(service_list[short_name]['work'])
+		return service_obj
+
+	def request(self, wrapper):
+		"""
+		:rtype: smshuborg.services.SmsService
+		"""
+		response = wrapper.request(self)
+		return self.__response_processing(response)
+
+
 class GetNumber(ActionsModel):
 	_name = 'getNumber'
 
