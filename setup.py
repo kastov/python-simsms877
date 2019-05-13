@@ -27,12 +27,12 @@ def requirements():
 
 
 setup(
-	name='smsactivateru',
+	name='smshuborg',
 	version='1.2.5',
 	long_description=long_description(),
 	long_description_content_type='text/markdown',
 	description='Wrapper for automatic reception of SMS-messages by smshub.org',
-	author='tezmen',
+	author='tezmen and ravensoracle',
 	license='Apache License, Version 2.0, see LICENSE file',
 	keywords='sms, revice, smshub.org, autoreg',
 	author_email='tezmenpro@gmail.com',
