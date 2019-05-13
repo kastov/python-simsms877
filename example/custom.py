@@ -17,7 +17,7 @@ available_phones = GetFreeSlots(
 	country=SmsTypes.Country.RU
 ).request(wrapper)
 # show for vk.com, whatsapp and youla.io)
-print('vk.com: {} номеров'.format(available_phones.VkCom.count))
+print('vk.com: {} номеров'.format(available_phones.Vkontakte.count))
 print('whatsapp: {} номеров'.format(available_phones.Whatsapp.count))
 print('youla.io: {} номеров'.format(available_phones.Youla.count))
 
