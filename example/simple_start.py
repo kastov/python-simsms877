@@ -1,8 +1,8 @@
-from smsactivateru import Sms, SmsTypes, SmsService, GetBalance, GetFreeSlots, GetNumber
+from smshuborg import Sms, SmsTypes, SmsService, GetBalance, GetFreeSlots, GetNumber
 
 """
 create wrapper with secret api-key
-search here: http://sms-activate.ru/index.php?act=profile)
+search here: http://smshub.org/index.php?act=profile)
 """
 wrapper = Sms('API KEY')
 
@@ -55,8 +55,8 @@ def fuck_yeah(code):
 # .. wait code
 activation.wait_code(callback=fuck_yeah, wrapper=wrapper, not_end=True)
 
-print('this string print befoer eval fuck_yeah function')
+print('this string print before eval fuck_yeah function')
 
-# .. and wait one mode code
+# .. and wait one more code
 # (!) if you not set not_end (or set False) – activation ended before return code
 activation.wait_code(callback=fuck_yeah, wrapper=wrapper)

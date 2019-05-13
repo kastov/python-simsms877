@@ -1,9 +1,9 @@
 import time
-from smsactivateru import Sms, SmsTypes, SmsService, GetBalance, GetFreeSlots, GetNumber, SetStatus, GetStatus
+from smshuborg import Sms, SmsTypes, SmsService, GetBalance, GetFreeSlots, GetNumber, SetStatus, GetStatus
 
 """
 create wrapper with secret api-key
-search here: http://sms-activate.ru/index.php?act=profile)
+search here: http://smshub.org/index.php?act=profile)
 """
 wrapper = Sms('API KEY')
 
