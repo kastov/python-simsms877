@@ -32,7 +32,7 @@ class SmsService:
 				argnames=['__service_short_name', '__count_slot', '__service_price_map', '__service_prices',
 				          '__service_quantities', '__service_min_price', '__service_max_price', '__service_is_work']
 			)(__service_short_name=short_name, __count_slot=0, __service_price_map=None, __service_prices=None,
-			  service_quantities=None, __service_min_price=0, __service_max_price=0, __service_is_work=False)
+			  __service_quantities=None, __service_min_price=0, __service_max_price=0, __service_is_work=False)
 			setattr(self, '_' + name, object)
 
 	@property
