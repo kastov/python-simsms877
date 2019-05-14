@@ -50,21 +50,18 @@ class ServiceModel:
 
 	@minPrice.setter
 	def minPrice(self, value):
-		if type(value) == tuple:
+		if type(value) == tuple and not (value[0] is None or value[1] is None):
 			self.__service_min_price = (float(value[0]), int(value[1]))
 		else:
 			self.__service_min_price = value
 
 	@property
-	def maxPrice(self, value):
-		if type(value) == tuple:
-			self.__service_max_price = (float(value[0]), int(value[1]))
-		else:
-			self.__service_max_price = value
+	def maxPrice(self):
+		return self.__service_max_price
 
 	@maxPrice.setter
 	def maxPrice(self, value):
-		if len(value) == 2:
+		if type(value) == tuple and not (value[0] is None or value[1] is None):
 			self.__service_max_price = (float(value[0]), int(value[1]))
 		else:
 			self.__service_max_price = value
@@ -75,7 +72,7 @@ class ServiceModel:
 
 	@work.setter
 	def work(self, value):
-		self.__service_is_work = bool(value)
+		self.__service_is_work = value
 
 
 class ActionsModel:

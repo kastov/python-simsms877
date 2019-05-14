@@ -39,6 +39,13 @@ class GetFreeSlots(ActionsModel):
 		service_obj = SmsService()
 		for name, short_name in ServiceStorage.names.items():
 			getattr(service_obj, name).count = int(service_list[short_name])
+			getattr(service_obj, name).count = int(service_list[short_name])
+			getattr(service_obj, name).priceMap = None
+			getattr(service_obj, name).prices = None
+			getattr(service_obj, name).quantities = None
+			getattr(service_obj, name).minPrice = (None, None)
+			getattr(service_obj, name).maxPrice = (None, None)
+			getattr(service_obj, name).work = None
 		return service_obj
 
 	def request(self, wrapper):
