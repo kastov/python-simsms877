@@ -110,3 +110,40 @@ class ActionsModel:
 	@_name.setter
 	def _name(self, value):
 		self.__action_name = value
+
+
+class ActionsModel2:
+	__action_name = ''
+	__response_data = ''
+
+	def __init__(self, current):
+		self.__request_data = {'asc': self._name}
+		self.data = self._build(current)
+
+	def _build(self, frame):
+		args, _, _, values = inspect.getargvalues(frame)
+		exclude = ['self', 'callback', 'wrapper']
+		result = {}
+		for i in args:
+			if not values[i]:
+				continue
+			if i in exclude:
+				continue
+			result[i] = values[i]
+		return result
+
+	@property
+	def data(self):
+		return self.__request_data
+
+	@data.setter
+	def data(self, value):
+		self.__request_data = {**self.__request_data, **value}
+
+	@property
+	def _name(self):
+		return self.__action_name
+
+	@_name.setter
+	def _name(self, value):
+		self.__action_name = value

@@ -4,7 +4,7 @@ import json
 
 from .activations import SmsActivation
 from .errors import error_handler
-from .models import ActionsModel
+from .models import ActionsModel, ActionsModel2
 from .services import SmsService, ServiceStorage
 
 
@@ -156,4 +156,42 @@ class SetStatus(ActionsModel):
 		:rtype: dict
 		"""
 		response = wrapper.request(self)
+		return self.__response_processing(response)
+
+
+class ChangeCountry(ActionsModel2):
+	_name = 'countryChange'
+
+	def __init__(self, country):
+		super().__init__(inspect.currentframe())
+
+	@error_handler
+	def __response_processing(self, response):
+		data = json.loads(response)
+		return data
+
+	def request(self, wrapper):
+		"""
+		:rtype: int
+		"""
+		response = wrapper.request2(self)
+		return self.__response_processing(response)
+
+
+class ChangeOperator(ActionsModel2):
+	_name = 'operatorChange'
+
+	def __init__(self, country, operator):
+		super().__init__(inspect.currentframe())
+
+	@error_handler
+	def __response_processing(self, response):
+		data = json.loads(response)
+		return data
+
+	def request(self, wrapper):
+		"""
+		:rtype: int
+		"""
+		response = wrapper.request2(self)
 		return self.__response_processing(response)
