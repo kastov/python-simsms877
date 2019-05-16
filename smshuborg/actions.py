@@ -59,7 +59,7 @@ class GetFreeSlots(ActionsModel):
 class GetFreeSlotsAndPrices(ActionsModel):
 	_name = 'getNumbersStatusAndCostHubFree'
 
-	def __init__(self, country=None, operator=None):
+	def __init__(self):
 		super().__init__(inspect.currentframe())
 
 	@error_handler

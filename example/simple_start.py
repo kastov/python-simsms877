@@ -2,7 +2,7 @@ from smshuborg import Sms, SmsTypes, SmsService, GetBalance, GetFreeSlots, GetNu
 
 """
 create wrapper with secret api-key
-search here: http://smshub.org/index.php?act=profile)
+search here: http://smshub.org/settings)
 """
 wrapper = Sms('API KEY')
 

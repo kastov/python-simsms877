@@ -18,9 +18,13 @@ class Sms:
 
 	def request2(self, action):
 		try:
-			params = {**{'api_key': self.key}, **{'cat': 'scripts'}, **{'act': 'manageActivations'}, **action.data}
-			print(params)
-			response = requests.get(self.url2, params)
+			data = {
+				'cat': 'scripts',
+				'act': 'manageActivations',
+				**action.data,
+				'apikey': self.key
+			}
+			response = requests.post(self.url2, data=data)
 			return response.text
 		except (ConnectionError, TimeoutError):
 			return 'NO_CONNECTION'
