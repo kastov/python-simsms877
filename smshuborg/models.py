@@ -88,9 +88,7 @@ class ActionsModel:
 		exclude = ['self', 'callback', 'wrapper']
 		result = {}
 		for i in args:
-			if i == 'ref':
-				values[i] = 'python' + __name__.split('.')[0][:-2]
-			elif not values[i]:
+			if not values[i]:
 				continue
 			if i in exclude:
 				continue
