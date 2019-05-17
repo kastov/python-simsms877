@@ -28,13 +28,13 @@ def requirements():
 
 setup(
 	name='smshuborg',
-	version='1.2.5',
+	version='1.2.6',
 	long_description=long_description(),
 	long_description_content_type='text/markdown',
 	description='Wrapper for automatic reception of SMS-messages by smshub.org',
 	author='tezmen and ravensoracle',
 	license='Apache License, Version 2.0, see LICENSE file',
-	keywords='sms, revice, smshub.org, autoreg',
+	keywords='sms, recive, smshub.org, autoreg',
 	author_email='tezmenpro@gmail.com',
 	url='https://github.com/ravensoracle/python-smshub-org/',
 	download_url='https://github.com/ravensoracle/python-smshub-org/archive/master.zip',
