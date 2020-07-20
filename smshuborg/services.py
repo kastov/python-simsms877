@@ -14,13 +14,13 @@ class ServiceStorage:
 	# 	'DeliveryClub': 'dt_0', 'Yandex': 'ya_0', 'YandexSmsForwarding': 'ya_1', 'Steam': 'mt_0', 'Tinder': 'oi_0',
 	# 	'MeetMe': 'fd_0', 'Mamba': 'fd_0', 'Dent': 'zz_0', 'KakaoTalk': 'kt_0', 'AOL': 'pm_0', 'LinkedIN': 'tn_0'}
 	names = {
-		'Vkontakte': 'vk_0', 'Odnoklassniki': 'ok_0', 'Whatsapp': 'wa_0', 'Viber': 'vi_0', 'Telegram': 'tg_0',
+		'Odnoklassniki': 'ok_0', 'Whatsapp': 'wa_0', 'Viber': 'vi_0', 'Telegram': 'tg_0',
 		'WeChat': 'wb_0', 'Google': 'go_0', 'Avito': 'av_0', 'Facebook': 'fb_0', 'Twitter': 'tw_0', 'AnyOther': 'ot_0',
 		'Uber': 'ub_0', 'Qiwi': 'qw_0', 'GettTaxi': 'gt_0', 'OlX': 'sn_0', 'Instagram': 'ig_0', 'Lukoil': 'ss_0',
 		'Youla': 'ym_0', 'MailRu': 'ma_0', 'Microsoft': 'mm_0', 'AirBnb': 'uk_0', 'LineMessenger': 'me_0',
 		'Yahoo': 'mb_0', 'DrugVokrug': 'we_0', 'Pyaterochka': 'bd_0', 'HQTrivia': 'kp_0', 'DeliveryClub': 'dt_0',
 		'Yandex': 'ya_0', 'Steam': 'mt_0', 'Tinder': 'oi_0', 'Mamba': 'fd_0', 'Dent': 'zz_0', 'KakaoTalk': 'kt_0',
-		'AOL': 'pm_0', 'LinkedIN': 'tn_0'}
+		'AOL': 'pm_0', 'LinkedIN': 'tn_0', 'McDonalds': 'ry_0'}
 
 
 class SmsService:
@@ -314,3 +314,10 @@ class SmsService:
 		:rtype: smshuborg.models.ServiceModel
 		"""
 		return self._LinkedIN
+
+	@property
+	def McDonalds(self):
+		"""
+		:rtype: smshuborg.models.ServiceModel
+		"""
+		return self._McDonalds
