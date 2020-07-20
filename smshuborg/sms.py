@@ -5,7 +5,7 @@ import requests
 class Sms:
 	def __init__(self, api_key):
 		self.key = api_key
-		self.url = 'https://smshub.org/stubs/handler_api.php'
+		self.url = 'https://simsms.org/stubs/handler_api.php'
 		self.url2 = 'https://smshub.org/api.php'
 
 	def request(self, action):
